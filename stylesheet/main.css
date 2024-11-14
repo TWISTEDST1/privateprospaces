@@ -1,0 +1,87 @@
+body{
+background-color: bisque;
+}
+.logo{
+    float:left;
+    width:35%;
+    background-color: rgb(146, 143, 143);
+    color: rgb(236, 230, 230);
+    font-size: 35pt;
+}
+.header{
+    background-color: rgb(146, 143, 143);
+    width: 90%;
+}
+.menu{
+    background-color: rgb(146, 143, 143);
+    color: rgb(233, 224, 224);
+    display:inline-block;
+    font-size: 35pt;
+    width: 10%;
+    float: none;
+    padding: 10px;
+}
+.{
+  background-color: rgb(146, 143, 143);
+    color:rgb(233, 230, 230);
+    font-size: 35pt;
+    float: right;
+
+}
+.menu:hover{
+    color:aqua;
+    font-size: 50pt;
+}
+.header_box{
+    margin-top:60px;
+    text-align: center;
+    justify-content:overflow;
+}
+
+.dropdown {
+    float:right;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 35px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: rgb(146, 143, 143);
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+    background-color: rgb(146, 143, 143);
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(146, 143, 143);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px  rgb(146, 143, 143);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    font-size:35pt;
+    color: rgb(228, 222, 222);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    color:aqua;
+  }
+  
+  .show {
+    display: block;
+  }

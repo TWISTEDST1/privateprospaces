@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>minecraft home page..</title>
+    <link rel="stylesheet" href="stylesheet/main.css">
+</head>
+<body>
+<div class="header">
+<div class="logo">welcome to home page</div>
+<div class="menu">home</div>
+<div class="menu">view</div>
+<div class="menu">about</div>
+<div class="menu">info</div>
+    <div class="dropdown">
+    <button class="dropbtn" onclick="myFunction()">profile
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="myDropdown">
+      <a href="#">LOGIN</a>
+      <a href="#">LOGOUT 2</a>
+      <a href="#">help 3</a>
+      <a href="">about</a>
+      <a href="">setting</a>
+    </div>
+    </div> 
+  </div>
+</div>  
+  
+<br>
+<div class="header_box">
+  <img src="images/minecraft.jpg" width="90%" height="120%">
+<br>
+<button id="add-to-home-screen" style="">download app</button>
+
+</div>
+<script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(e) {
+      if (!e.target.matches('.dropbtn')) {
+      var myDropdown = document.getElementById("myDropdown");
+        if (myDropdown.classList.contains('show')) {
+          myDropdown.classList.remove('show');
+        }
+      }
+    }
+    let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (event) => {
+  // Prevent the default prompt
+  event.preventDefault();
+  // Save the event to trigger later
+  deferredPrompt = event;
+
+  // Show your custom "Add to Home Screen" button
+  const addBtn = document.getElementById('add-to-home-screen');
+  addBtn.style.display = 'block';
+
+  addBtn.addEventListener('click', () => {
+    // Show the prompt
+    deferredPrompt.prompt();
+    
+    // Wait for the user to respond to the prompt
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the A2HS prompt');
+      } else {
+        console.log('User dismissed the A2HS prompt');
+      }
+      deferredPrompt = null;
+    });
+  });
+});
+
+    </script>
+</body>
+</html>
